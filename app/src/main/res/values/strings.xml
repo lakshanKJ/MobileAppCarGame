@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Car Game</string>
+    <string name="car_game">CAR GAME</string>
+    <string name="identify_the_car_make">Identify the car make</string>
+    <string name="hints">Hints</string>
+    <string name="identify_the_car_image">Identify the car image</string>
+    <string name="advanced_level">Advanced level</string>
+
+    <string-array name="cars_array">
+        <item>Aston Martin One77</item>
+        <item>Audi E-Tron</item>
+        <item>Bentley</item>
+        <item>BMW 7-Series</item>
+        <item>Bugati Veyron</item>
+        <item>Ferrari458</item>
+        <item>Ferrari Enzo</item>
+        <item>Ferrari F60</item>
+        <item>Ferrari LaFerrari</item>
+        <item>Ford Fiesta</item>
+        <item>Jaguar F-Type</item>
+        <item>Koenigsegg One</item>
+        <item>Koenigsegg Trevita</item>
+        <item>Lamborghini Murcielgo</item>
+        <item>Lamborghini Veneno</item>
+        <item>Lexus LFA</item>
+        <item>Lotus Elise</item>
+        <item>Lyken Hypersopr</item>
+        <item>McLaren</item>
+        <item>Mercedes Benz</item>
+        <item>Mini Cooper</item>
+        <item>Mitsubishi Evo</item>
+        <item>Mustang GT</item>
+        <item>Nissan GTR</item>
+        <item>Pagani Huayra</item>
+        <item>Pagani Zonda</item>
+        <item>Porche</item>
+        <item>Range Rover</item>
+        <item>Rolls Royce Phantom</item>
+        <item>Subaru</item>
+        <item>Tesla Model S</item>
+        <item>Zenvo</item>
+    </string-array>
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title_textview"
+        android:layout_width="266dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/car_game"
+        android:textColor="@color/purple_700"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Identify_the_car_make_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/lato"
+        android:text="@string/identify_the_car_make"
+        android:textStyle="bold"
+        android:onClick="launchIdentifyTheCarMakeActivity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_textview" />
+
+    <Button
+        android:id="@+id/Hints_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/lato"
+        android:text="@string/hints"
+        android:textStyle="bold"
+        android:onClick="launchHintsActivity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Identify_the_car_make_button" />
+
+    <Button
+        android:id="@+id/Identify_the_car_image_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/lato"
+        android:text="@string/identify_the_car_image"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Hints_button" />
+
+    <Button
+        android:id="@+id/Advanced_level_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/lato"
+        android:text="@string/advanced_level"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Identify_the_car_image_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
