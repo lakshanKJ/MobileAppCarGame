@@ -55,6 +55,7 @@
         android:fontFamily="@font/lato"
         android:text="@string/identify_the_car_image"
         android:textStyle="bold"
+        android:onClick="launchIdentifyTheCarImageActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Hints_button" />
@@ -67,8 +68,20 @@
         android:fontFamily="@font/lato"
         android:text="@string/advanced_level"
         android:textStyle="bold"
+        android:onClick="launchAdvancedLevelMainActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Identify_the_car_image_button" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/timer_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="@string/timer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Advanced_level_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IdentifyTheCarImageActivity">
+
+    <ImageView
+        android:id="@+id/imageviewOne"
+        android:layout_width="210dp"
+        android:layout_height="144dp"
+        android:contentDescription="@string/_24dp"
+        android:onClick="checkAnswerOnClickOne"
+        app:layout_constraintBottom_toTopOf="@+id/imageviewTwo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageviewTwo"
+        android:layout_width="204dp"
+        android:layout_height="131dp"
+        android:layout_marginTop="248dp"
+        android:contentDescription="@string/_24dp"
+        android:onClick="checkAnswerOnClickTwo"
+        app:layout_constraintBottom_toTopOf="@+id/imageviewThree"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageviewThree"
+        android:layout_width="207dp"
+        android:layout_height="131dp"
+        android:contentDescription="@string/_24dp"
+        android:onClick="checkAnswerOnClickThree"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/car_manufacture_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textview"
+        app:layout_constraintBottom_toBottomOf="@+id/imageviewOne"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageviewOne"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/match_answer_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/result"
+        android:textColor="#E42416"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageviewTwo"
+        app:layout_constraintTop_toBottomOf="@+id/car_manufacture_textView" />
+
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="nextOnClick"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toEndOf="@+id/imageviewThree"
+        app:layout_constraintTop_toBottomOf="@+id/match_answer_textview"
+        app:layout_constraintVertical_bias="0.816" />
+
+    <TextView
+        android:id="@+id/identify_timer_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/imageviewOne"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

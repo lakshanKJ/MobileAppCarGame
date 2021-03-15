@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CarGame">
-        <activity android:name=".HintsActivity"></activity>
+        <activity android:name=".AdvancedLevelMainActivity"></activity>
+        <activity android:name=".IdentifyTheCarImageActivity" />
+        <activity android:name=".HintsActivity" />
         <activity android:name=".IdentifyTheCarMakeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

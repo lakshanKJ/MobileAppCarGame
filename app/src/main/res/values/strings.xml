@@ -5,6 +5,15 @@
     <string name="hints">Hints</string>
     <string name="identify_the_car_image">Identify the car image</string>
     <string name="advanced_level">Advanced level</string>
+    <string name="_24dp">24dp</string>
+    <string name="textview">TextView</string>
+    <string name="guess_a_letter">Guess a letter</string>
+    <string name="submit">Submit</string>
+    <string name="type_the_car_name">Type the car name</string>
+    <string name="identify">Identify</string>
+    <string name="result">result</string>
+    <string name="next">Next</string>
+    <string name="timer">Timer</string>
 
     <string-array name="cars_array">
         <item>Aston Martin One77</item>

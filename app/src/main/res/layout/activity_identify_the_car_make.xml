@@ -7,13 +7,13 @@
     tools:context=".IdentifyTheCarMakeActivity">
 
     <ImageView
-        android:id="@+id/Identify_the_car_image_imageview"
+        android:id="@+id/imageviewTwo"
         android:layout_width="259dp"
         android:layout_height="173dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
-        android:contentDescription="24dp"
+        android:contentDescription="@string/_24dp"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,22 +22,29 @@
         android:id="@+id/identify_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Identify"
+        android:onClick="onIdentifyBtnClicked"
+        android:text="@string/identify"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Identify_the_car_image_imageview" />
+        app:layout_constraintTop_toTopOf="@+id/spinner" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="264dp"
         android:layout_height="35dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toStartOf="@+id/identify_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Identify_the_car_image_imageview" />
+        app:layout_constraintTop_toBottomOf="@+id/imageviewTwo" />
 
     <TextView
-        android:id="@+id/result_textView"
+        android:id="@+id/right_result_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/textview"
+        android:textColor="#16E81F"
+        android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,10 +54,24 @@
         android:id="@+id/answer_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/textview"
+        android:textColor="#D19F08"
+        android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/result_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/right_result_textView" />
+
+    <TextView
+        android:id="@+id/carMake_timer_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="@+id/imageviewTwo"
+        app:layout_constraintStart_toStartOf="@+id/imageviewTwo"
+        app:layout_constraintTop_toBottomOf="@+id/imageviewTwo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

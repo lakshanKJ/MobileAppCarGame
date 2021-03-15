@@ -2,8 +2,11 @@ package com.android.cargame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,6 +32,7 @@ public class HintsActivity extends AppCompatActivity {
 
     int imgPositionNumber = callRandom();
 
+    int retryCount =3;
 
     private int callRandom() {
 
@@ -57,8 +61,9 @@ public class HintsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hints);
 
-
         getRandomCar();
+
+        getTime();
 
         TextView textView = findViewById(R.id.textView);
 
@@ -76,9 +81,9 @@ public class HintsActivity extends AppCompatActivity {
     public void launchSubmitBtn(View view) {
 
         checkLetter();
+        getTime();
     }
 
-//    StringBuilder astonMartin = new StringBuilder("_____-______");
 
     public void checkLetter() {
 
@@ -90,19 +95,88 @@ public class HintsActivity extends AppCompatActivity {
 
             String letter = String.valueOf(editText.getText());
 
-            for (int i = 0; i < charArray.length; i++) {
-//                    getting 0 th position of letter char
-                if (charArray[i] == letter.charAt(0)) {
-                    newCharArray.add(letter);
+            if (!letter.isEmpty()) {
+                Boolean isLetterIn = false;
 
-                    StringBuilder myName = new StringBuilder(guessCar);
-                    myName.setCharAt(i, letter.charAt(0));
-                    TextView textView = findViewById(R.id.textView);
-                    textView.setText(myName);
-                    guessCar = String.valueOf(myName);
+                for (int i = 0; i < charArray.length; i++) {
+
+//                    getting 0 th position of letter char
+                    if (Character.toUpperCase(charArray[i]) == Character.toUpperCase(letter.charAt(0))) {
+                        newCharArray.add(letter);
+
+                        isLetterIn = true;
+
+                        StringBuilder fillWord = new StringBuilder(guessCar);
+                        fillWord.setCharAt(i, letter.charAt(0));
+                        TextView textView = findViewById(R.id.textView);
+                        textView.setText(fillWord);
+                        guessCar = String.valueOf(fillWord);
+
+                        if (!guessCar.contains("_")){
+                            TextView answerTxt = findViewById(R.id.final_result_textview);
+                            answerTxt.setVisibility(View.VISIBLE);
+                            answerTxt.setTextColor(Color.GREEN);
+                            answerTxt.setText("CORRECT!");
+
+                            Button button = findViewById(R.id.submit_button);
+                            button.setText("NEXT");
+                            button.setOnClickListener(this::launchNextBtn);
+                        }
+
+                        TextView resultTxt = findViewById(R.id.final_result_textview);
+                        resultTxt.setVisibility(View.VISIBLE);
+                        resultTxt.setText("");
+                    }
+                }
+                if (!isLetterIn) {
+                    retryCount=retryCount-1;
+                    if (retryCount == 0) {
+                        TextView resultTxt = findViewById(R.id.final_result_textview);
+                        resultTxt.setVisibility(View.VISIBLE);
+                        resultTxt.setTextColor(Color.RED);
+                        resultTxt.setText("WRONG!");
+
+                        Button button = findViewById(R.id.submit_button);
+                        button.setText("NEXT");
+                        button.setOnClickListener(this::launchNextBtn);
+                    }
                 }
             }
         }
 
+        editText.setText("");
+    }
+
+    public void launchNextBtn(View view){
+        imgPositionNumber = callRandom();
+        retryCount = 3;
+        getRandomCar();
+        getTime();
+        Button button = findViewById(R.id.submit_button);
+        button.setText("SUBMIT");
+        button.setOnClickListener(this::launchSubmitBtn);
+
+    }
+
+    public void getTime(){
+        CountDownTimer timer = new CountDownTimer(20000, 1000) {
+
+            TextView timerTextview = findViewById(R.id.identify_timer_textView);
+
+            public void onTick(long millisUntilFinished) {
+                timerTextview.setText("seconds remaining: " + millisUntilFinished / 1000);
+            }
+
+            public void onFinish() {
+                timerTextview.setText("Time's up!");
+                checkLetter();
+            }
+        };
+
+        Boolean isTimerOn = getIntent().getBooleanExtra("TIMER_VALUE", false);
+
+        if (isTimerOn) {
+            timer.start();
+        }
     }
 }
